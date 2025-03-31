@@ -18,9 +18,11 @@ The website is live on **GitHub Pages**: 🔗 **[duncanram.github.io](https://du
 ## Project Structure  
 
 ```
-/
-  ├── index.html
-  └── README.md         
+  └── 📁assets
+      └── CV Todani Duncan - 2025.pdf
+  └── 📁images
+      └── profile_pic.jpg
+  └── index.html
 ```
 
 ## Author  
