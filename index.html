@@ -2,752 +2,773 @@
 <html lang="en-US">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todani Duncan Portfolio:</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <style>
-    /* Base Styles */
-    :root {
-      --primary-color: #0dcaf0;
-      --dark-color: #212529;
-      --light-color: #f8f9fa;
-      --gray-color: #6c757d;
-      --white: #ffffff;
-      --black: #000000;
-      --section-padding: 4rem;
-      --content-padding: 2rem;
-      --element-margin: 1rem;
-      --base-font-size: 1.1rem;
-      --heading-scale: 1.3;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Ubuntu', sans-serif;
-      line-height: 1.6;
-      color: var(--dark-color);
-      background-color: var(--light-color);
-      padding: 0;
-      font-size: var(--base-font-size);
-    }
-
-    h1 {
-      font-size: calc(2.5rem * var(--heading-scale));
-    }
-
-    h2 {
-      font-size: calc(2rem * var(--heading-scale));
-    }
-
-    h3 {
-      font-size: calc(1.75rem * var(--heading-scale));
-    }
-
-    h4 {
-      font-size: calc(1.5rem * var(--heading-scale));
-    }
-
-    h5 {
-      font-size: calc(1.25rem * var(--heading-scale));
-    }
-
-    h6 {
-      font-size: calc(1rem * var(--heading-scale));
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--content-padding);
-    }
-
-    /* Header */
-    header {
-      padding: 1.5rem 0;
-      background-color: var(--white);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .header-content {
-      padding: 0 var(--content-padding);
-    }
-
-    .site-title {
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: var(--dark-color);
-      margin-bottom: 1rem;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      margin-top: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-item {
-      margin: 0.5rem 1rem;
-    }
-
-    .nav-link {
-      padding: 0.5rem 1rem;
-      font-weight: 500;
-      transition: color 0.3s;
-      font-size: 1.1rem;
-    }
-
-    .nav-link:hover {
-      color: var(--primary-color);
-    }
-
-    /* Hero Section */
-    .hero {
-      background-color: var(--primary-color);
-      color: var(--white);
-      padding: var(--section-padding) 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 0 var(--content-padding);
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .avatar {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      margin: 0 auto 2rem;
-      overflow: hidden;
-      border: 5px solid var(--white);
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    h1 {
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      margin: 2rem 0;
-      flex-wrap: wrap;
-    }
-
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.2);
-      margin: 0.5rem;
-      transition: background-color 0.3s;
-      font-size: 1.2rem;
-    }
-
-    .social-links a:hover {
-      background-color: var(--primary-color);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.8rem 1.8rem;
-      border-radius: 5px;
-      font-weight: 500;
-      transition: all 0.3s;
-      margin: 0.5rem;
-      font-size: 1.1rem;
-    }
-
-    .btn-outline {
-      border: 2px solid var(--white);
-      color: var(--white);
-    }
-
-    .btn-outline:hover {
-      background-color: var(--white);
-      color: var(--primary-color);
-    }
-
-    .btn-primary {
-      background-color: var(--white);
-      color: var(--primary-color);
-      border: 2px solid var(--white);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--gray-color);
-      color: var(--white);
-    }
-
-    /* Sections */
-    .section {
-      padding: var(--section-padding) 0;
-      background-color: var(--white);
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .section-content {
-      padding: 0 var(--content-padding);
-    }
-
-    .section-title {
-      margin-bottom: 2.5rem;
-      text-align: center;
-      color: var(--dark-color);
-      padding: 0 1rem;
-    }
-
-    /* About Section */
-    .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      margin-top: 1.5rem;
-    }
-
-    .about-text {
-      flex: 1;
-      min-width: 300px;
-      padding: 0 1rem;
-      font-size: 1.1rem;
-    }
-
-    .bio-info {
-      flex: 1;
-      min-width: 300px;
-      padding: 0 1rem;
-    }
-
-    .bio-item {
-      display: flex;
-      margin-bottom: 1.2rem;
-      align-items: center;
-      font-size: 1.1rem;
-    }
-
-    .bio-icon {
-      width: 24px;
-      margin-right: 1rem;
-      color: var(--gray-color);
-      text-align: center;
-      font-size: 1.1rem;
-    }
-
-    /* Education Section */
-    .timeline {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 2rem;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background-color: var(--primary-color);
-    }
-
-    .timeline-card {
-      position: relative;
-      padding-left: 4rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .timeline-card::before {
-      content: '';
-      position: absolute;
-      left: 1.5rem;
-      top: 1.5rem;
-      width: 1rem;
-      height: 1rem;
-      border-radius: 50%;
-      background-color: var(--primary-color);
-      border: 3px solid var(--white);
-      z-index: 1;
-    }
-
-    .timeline-head {
-      margin-bottom: 1rem;
-    }
-
-    .timeline-head h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.4rem;
-    }
-
-    .timeline-body {
-      background-color: var(--light-color);
-      padding: 1.5rem;
-      border-radius: 5px;
-      font-size: 1.1rem;
-    }
-
-    /* Portfolio Section */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 0 1rem;
-    }
-
-    .portfolio-item {
-      background-color: var(--light-color);
-      border-radius: 5px;
-      overflow: hidden;
-      transition: transform 0.3s;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .portfolio-img {
-      height: 200px;
-      background-color: var(--gray-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 3rem;
-    }
-
-    .portfolio-info {
-      padding: 1.5rem;
-    }
-
-    .portfolio-info h3 {
-      margin-bottom: 0.8rem;
-      font-size: 1.4rem;
-    }
-
-    .portfolio-info p {
-      font-size: 1.1rem;
-    }
-
-    /* Contact Section */
-    .contact-section {
-      padding: var(--section-padding) 0;
-      background-color: var(--white);
-      margin-bottom: 2rem;
-    }
-
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      padding: 0 1rem;
-    }
-
-    .contact-form-container {
-      padding: 1.5rem;
-    }
-
-    .map-container {
-      height: 100%;
-      min-height: 400px;
-      border-radius: 5px;
-      overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-      font-size: 1.1rem;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-family: 'Ubuntu', sans-serif;
-      font-size: 1.1rem;
-    }
-
-    textarea.form-control {
-      min-height: 150px;
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--dark-color);
-      color: var(--white);
-      padding: 3rem 0;
-      text-align: center;
-    }
-
-    .footer-content {
-      padding: 0 var(--content-padding);
-    }
-
-    footer h3 {
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
-    }
-
-    .footer-nav {
-      margin: 1.5rem 0;
-    }
-
-    .footer-nav .nav {
-      margin: 0;
-    }
-
-    footer p {
-      margin-top: 1.5rem;
-      font-size: 1.1rem;
-    }
-
-    /* Utility Classes */
-    .text-center {
-      text-align: center;
-    }
-
-    .text-muted {
-      color: var(--gray-color);
-    }
-
-    .mb-4 {
-      margin-bottom: 1.5rem;
-    }
-
-    .mt-5 {
-      margin-top: 3rem;
-    }
-
-    .p-5 {
-      padding: 3rem;
-    }
-
-    .d-none {
-      display: none;
-    }
-
-    .bio-item a {
-      color: blue;
-      transition: color 0.3s;
-    }
-
-    .bio-item a:hover {
-      color: var(--primary-color);
-    }
-
-    @media (max-width: 992px) {
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
-
-      .map-container {
-        min-height: 300px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      :root {
-        --section-padding: 3rem;
-        --content-padding: 1.5rem;
-        --base-font-size: 1rem;
-        --heading-scale: 1.2;
-      }
-
-      .section {
-        padding: var(--section-padding) 0;
-      }
-
-      .about-content,
-      .contact-container {
-        flex-direction: column;
-        gap: 2rem;
-      }
-
-      .hero-content {
-        padding: 0 var(--content-padding);
-      }
-
-      .timeline::before {
-        left: 1.5rem;
-      }
-
-      .timeline-card {
-        padding-left: 3.5rem;
-      }
-
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      :root {
-        --section-padding: 2.5rem;
-        --content-padding: 1rem;
-      }
-
-      .btn {
-        display: block;
-        width: 100%;
-        margin: 0.5rem 0;
-      }
-
-      .hero .btn {
-        display: inline-block;
-        width: auto;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todani Duncan Portfolio:</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #0dcaf0;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+            --white: #ffffff;
+            --black: #000000;
+            --section-padding: 4rem;
+            --content-padding: 2rem;
+            --element-margin: 1rem;
+            --base-font-size: 1.1rem;
+            --heading-scale: 1.3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            padding: 0;
+            font-size: var(--base-font-size);
+        }
+
+        h1 {
+            font-size: calc(2.5rem * var(--heading-scale));
+        }
+
+        h2 {
+            font-size: calc(2rem * var(--heading-scale));
+        }
+
+        h3 {
+            font-size: calc(1.75rem * var(--heading-scale));
+        }
+
+        h4 {
+            font-size: calc(1.5rem * var(--heading-scale));
+        }
+
+        h5 {
+            font-size: calc(1.25rem * var(--heading-scale));
+        }
+
+        h6 {
+            font-size: calc(1rem * var(--heading-scale));
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--content-padding);
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            padding: 0 var(--content-padding);
+        }
+
+        .site-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            margin: 0.5rem 1rem;
+        }
+
+        .nav-link {
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: var(--section-padding) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 var(--content-padding);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            border: 5px solid var(--white);
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0.5rem;
+            transition: background-color 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-color);
+            border: 2px solid var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gray-color);
+            color: var(--white);
+        }
+
+        /* Sections */
+        .section {
+            padding: var(--section-padding) 0;
+            background-color: var(--white);
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-content {
+            padding: 0 var(--content-padding);
+        }
+
+        .section-title {
+            margin-bottom: 2.5rem;
+            text-align: center;
+            color: var(--dark-color);
+            padding: 0 1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 1.5rem;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 1rem;
+            font-size: 1.1rem;
+        }
+
+        .bio-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 1rem;
+        }
+
+        .bio-item {
+            display: flex;
+            margin-bottom: 1.2rem;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .bio-icon {
+            width: 24px;
+            margin-right: 1rem;
+            color: var(--gray-color);
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Education Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 2rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .timeline-card {
+            position: relative;
+            padding-left: 4rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            top: 1.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid var(--white);
+            z-index: 1;
+        }
+
+        .timeline-head {
+            margin-bottom: 1rem;
+        }
+
+        .timeline-head h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .timeline-body {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .portfolio-item {
+            background-color: var(--light-color);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-img {
+            height: 200px;
+            background-color: var(--gray-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+
+        .portfolio-info h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .portfolio-info p {
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: var(--section-padding) 0;
+            background-color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 0 1rem;
+        }
+
+        .contact-form-container {
+            padding: 1.5rem;
+        }
+
+        .map-container {
+            height: 100%;
+            min-height: 400px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            padding: 0 var(--content-padding);
+        }
+
+        footer h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .footer-nav {
+            margin: 1.5rem 0;
+        }
+
+        .footer-nav .nav {
+            margin: 0;
+        }
+
+        footer p {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-muted {
+            color: var(--gray-color);
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mt-5 {
+            margin: 3rem;
+        }
+
+        .p-5 {
+            padding: 3rem;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        .bio-item a {
+            color: blue;
+            transition: color 0.3s;
+        }
+
+        .bio-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .title-hidden {
+            display: none;
+        }
+
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 3rem;
+                --content-padding: 1.5rem;
+                --base-font-size: 1rem;
+                --heading-scale: 1.2;
+            }
+
+            .section {
+                padding: var(--section-padding) 0;
+            }
+
+            .about-content,
+            .contact-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .hero-content {
+                padding: 0 var(--content-padding);
+            }
+
+            .timeline::before {
+                left: 1.5rem;
+            }
+
+            .timeline-card {
+                padding-left: 3.5rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --section-padding: 2.5rem;
+                --content-padding: 1rem;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+
+            .hero .btn {
+                display: inline-block;
+                width: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <header>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title" id="siteTitle">Todani Duncan Portfolio</h1>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="#about"></i>About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education"></i>Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio"></i>Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact"></i>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="intro">
+        <div class="hero-content">
+            <div class="avatar">
+                <img src="images/profile_pic.jpg" alt="Todani Duncan">
+            </div>
+            <h1>Todani Duncan Ramuntshi</h1>
+            <p>Mechatronics Technician  |  Data Engineering Student</p>
+            <div class="social-links">
+                <a href="https://twitter.com/duncanram" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/duncanram" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/duncan.ram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/duncanram" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/duncanram" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <div>
+                <a href="assets/CV Todani Duncan - 2025.pdf" class="btn btn-outline"><i class="fas fa-download me-2"></i>  Download CV</a>
+                <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i>  Hire Me</a>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
-      <div class="header-content">
-        <h1 class="site-title">Todani Duncan Portfolio</h1>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link" href="#about"></i>About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education"></i>Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio"></i>Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact"></i>Contact</a></li>
-        </ul>
-      </div>
+        <section class="section" id="about">
+            <div class="section-content">
+                <h2 class="section-title"><i class="fas fa-user me-2"></i>  About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Having worked in Mechanical Engineering and Retail Environments, and currently training as a Quality Engineer while studying Data Engineering, I have both technical and people/customer interaction skills. I have exceptional skills in CAD design. I enjoy solving problems, learning new things, and working with others to improve efficiency and drive innovation in engineering and technology.</p>
+                    </div>
+                    <div class="bio-info">
+                        <div class="bio-item">
+                            <span class="bio-icon"><i class="fas fa-envelope"></i></span>
+                            <span>  duncan.ram@gmail.com</span>
+                        </div>
+                        <div class="bio-item">
+                            <span class="bio-icon"><i class="fab fa-github"></i></span>
+                            <span><a href="https://github.com/duncanram" target="_blank">  github.com/duncanram</a></span>
+                        </div>
+                        <div class="bio-item">
+                            <span class="bio-icon"><i class="fab fa-linkedin"></i></span>
+                            <span><a href="https://www.linkedin.com/in/duncanram" target="_blank">  linkedin.com/in/duncanram</a></span>
+                        </div>
+                        <div class="bio-item">
+                            <span class="bio-icon"><i class="fas fa-phone"></i></span>
+                            <span>  +27 72 486 4111</span>
+                        </div>
+                        <div class="bio-item">
+                            <span class="bio-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <span>  Serengeti Sands, Eldoret St, Sunninghill, 2157</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="education">
+            <div class="section-content">
+                <h2 class="section-title"><i class="fas fa-graduation-cap me-2"></i>  Education</h2>
+                <div class="timeline">
+                    <div class="timeline-card">
+                        <div class="timeline-head">
+                            <h3><i class="fas fa-certificate me-2 text-primary"></i> National Diploma: Mechanical Engineering (Mechatronics)</h3>
+                            <p class="text-muted"><i class="fas fa-university me-2"></i>  Durban University of Technology</p>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted"><i class="fas fa-calendar-alt me-2"></i> Jan 2011 - Mar 2020</p>
+                            <p></i> COMPLETED</p>
+                        </div>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-head">
+                            <h3><i class="fas fa-certificate me-2 text-primary"></i> National Certificate in IT: Data Engineering</h3>
+                            <p class="text-muted"><i class="fas fa-laptop-code me-2"></i>  Umuzi.org (Online)</p>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted"><i class="fas fa-calendar-alt me-2"></i> March 2024 - Present</p>
+                            <p></i> Currently Enrolled</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="portfolio">
+            <div class="section-content">
+                <h2 class="section-title"><i class="fas fa-briefcase me-2"></i>  Portfolio</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <div class="portfolio-img">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3><i class="fas fa-project-diagram me-2"></i> Mechatronics Project</h3>
+                            <p><i class="fas fa-info-circle me-2"></i> Coming Soon</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-img">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3><i class="fas fa-project-diagram me-2"></i> Data Engineering</h3>
+                            <p><i class="fas fa-info-circle me-2"></i> Coming Soon</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-img">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3><i class="fas fa-project-diagram me-2"></i> Robotics</h3>
+                            <p><i class="fas fa-info-circle me-2"></i> Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="section-content">
+                <h2 class="section-title"><i class="fas fa-envelope me-2"></i>  Contact</h2>
+                <div class="contact-container">
+                    <div class="contact-form-container">
+                        <form class="contact-form" action="https://formspree.io/f/xldjwgqd" method="POST">
+                            <div class="form-group">
+                                <label for="name"><i class="fas fa-user me-2"></i>  Your Name</label>
+                                <input type="text" id="name" class="form-control" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-at me-2"></i>  Your Email</label>
+                                <input type="email" id="email" class="form-control" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message"><i class="fas fa-comment me-2"></i>  Your Message</label>
+                                <textarea id="message" class="form-control" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i>  Send Message</button>
+                        </form>
+                        <div class="contact-info" style="margin-top: 2rem;">
+                            <div class="bio-item">
+                                <span class="bio-icon"><i class="fas fa-phone"></i></span>
+                                <span>+27 72 486 4111</span>
+                            </div>
+                            <div class="bio-item">
+                                <span class="bio-icon"><i class="fas fa-envelope"></i></span>
+                                <span>duncan.ram@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://maps.google.com/maps?width=100%25&height=400&hl=en&q=Serengeti%20Sands,%20Eldoret%20Street,%20Sunninghill+(Serengeti%20Sands)&t=&z=14&ie=UTF8&iwloc=B&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-  </header>
 
-  <section class="hero" id="intro">
-    <div class="hero-content">
-      <div class="avatar">
-        <img src="images/profile_pic.jpg" alt="Todani Duncan">
-      </div>
-      <h1>Todani Duncan Ramuntshi</h1>
-      <p>Mechatronics Technician  |  Data Engineering Student</p>
-      <div class="social-links">
-        <a href="https://twitter.com/duncanram" title="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.facebook.com/duncanram" title="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/duncan.ram" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/duncanram" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/duncanram" title="GitHub"><i class="fab fa-github"></i></a>
-      </div>
-      <div>
-        <a href="assets/CV Todani Duncan - 2025.pdf" class="btn btn-outline"><i class="fas fa-download me-2"></i>  Download CV</a>
-        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i>  Hire Me</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="container">
-    <section class="section" id="about">
-      <div class="section-content">
-        <h2 class="section-title"><i class="fas fa-user me-2"></i>  About Me</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>Having worked in Mechanical Engineering and Retail Environments, and currently training as a Quality Engineer while studying Data Engineering, I have both technical and people/customer interaction skills. I have exceptional skills in CAD design. I enjoy solving problems, learning new things, and working with others to improve efficiency and drive innovation in engineering and technology.</p>
-          </div>
-          <div class="bio-info">
-            <div class="bio-item">
-              <span class="bio-icon"><i class="fas fa-envelope"></i></span>
-              <span>  duncan.ram@gmail.com</span>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Todani Duncan Ramuntshi</h3>
+                <div class="footer-nav">
+                    <ul class="nav">
+                        <li class="nav-item"><a href="https://twitter.com/duncanram" title="Twitter"><i class="fab fa-twitter fa-lg"></i></a></li>
+                        <li class="nav-item"><a href="https://www.facebook.com/duncanram" title="Facebook"><i class="fab fa-facebook fa-lg"></i></a></li>
+                        <li class="nav-item"><a href="https://www.instagram.com/duncan.ram" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a></li>
+                        <li class="nav-item"><a href="https://github.com/duncanram" title="GitHub"><i class="fab fa-github fa-lg"></i></a></li>
+                        <li class="nav-item"><a href="https://www.linkedin.com/in/duncanram" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a></li>
+                    </ul>
+                </div>
+                <p><i class="far fa-copyright"></i> 2025 All rights reserved.</p>
             </div>
-            <div class="bio-item">
-              <span class="bio-icon"><i class="fab fa-github"></i></span>
-              <span><a href="https://github.com/duncanram" target="_blank">  github.com/duncanram</a></span>
-            </div>
-            <div class="bio-item">
-              <span class="bio-icon"><i class="fab fa-linkedin"></i></span>
-              <span><a href="https://www.linkedin.com/in/duncanram" target="_blank">  linkedin.com/in/duncanram</a></span>
-            </div>
-            <div class="bio-item">
-              <span class="bio-icon"><i class="fas fa-phone"></i></span>
-              <span>  +27 72 486 4111</span>
-            </div>
-            <div class="bio-item">
-              <span class="bio-icon"><i class="fas fa-map-marker-alt"></i></span>
-              <span>  Serengeti Sands, Eldoret St, Sunninghill, 2157</span>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </footer>
 
-    <section class="section" id="education">
-      <div class="section-content">
-        <h2 class="section-title"><i class="fas fa-graduation-cap me-2"></i>  Education</h2>
-        <div class="timeline">
-          <div class="timeline-card">
-            <div class="timeline-head">
-              <h3><i class="fas fa-certificate me-2 text-primary"></i> National Diploma: Mechanical Engineering (Mechatronics)</h3>
-              <p class="text-muted"><i class="fas fa-university me-2"></i>  Durban University of Technology</p>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted"><i class="fas fa-calendar-alt me-2"></i> Jan 2011 - Mar 2020</p>
-              <p></i> COMPLETED</p>
-            </div>
-          </div>
-          <div class="timeline-card">
-            <div class="timeline-head">
-              <h3><i class="fas fa-certificate me-2 text-primary"></i> National Certificate in IT: Data Engineering</h3>
-              <p class="text-muted"><i class="fas fa-laptop-code me-2"></i>  Umuzi.org (Online)</p>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted"><i class="fas fa-calendar-alt me-2"></i> March 2024 - Present</p>
-              <p></i> Currently Enrolled</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const siteTitle = document.getElementById('siteTitle');
+            const headerHeight = header.offsetHeight;
 
-    <section class="section" id="portfolio">
-      <div class="section-content">
-        <h2 class="section-title"><i class="fas fa-briefcase me-2"></i>  Portfolio</h2>
-        <div class="portfolio-grid">
-          <div class="portfolio-item">
-            <div class="portfolio-img">
-              <i class="fas fa-cogs"></i>
-            </div>
-            <div class="portfolio-info">
-              <h3><i class="fas fa-project-diagram me-2"></i> Mechatronics Project</h3>
-              <p><i class="fas fa-info-circle me-2"></i> Coming Soon</p>
-            </div>
-          </div>
-          <div class="portfolio-item">
-            <div class="portfolio-img">
-              <i class="fas fa-database"></i>
-            </div>
-            <div class="portfolio-info">
-              <h3><i class="fas fa-project-diagram me-2"></i> Data Engineering</h3>
-              <p><i class="fas fa-info-circle me-2"></i> Coming Soon</p>
-            </div>
-          </div>
-          <div class="portfolio-item">
-            <div class="portfolio-img">
-              <i class="fas fa-robot"></i>
-            </div>
-            <div class="portfolio-info">
-              <h3><i class="fas fa-project-diagram me-2"></i> Robotics</h3>
-              <p><i class="fas fa-info-circle me-2"></i> Coming Soon</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="section-content">
-        <h2 class="section-title"><i class="fas fa-envelope me-2"></i>  Contact</h2>
-        <div class="contact-container">
-          <div class="contact-form-container">
-            <form class="contact-form" action="https://formspree.io/f/xldjwgqd" method="POST">
-              <div class="form-group">
-                <label for="name"><i class="fas fa-user me-2"></i>  Your Name</label>
-                <input type="text" id="name" class="form-control" name="name" required>
-              </div>
-              <div class="form-group">
-                <label for="email"><i class="fas fa-at me-2"></i>  Your Email</label>
-                <input type="email" id="email" class="form-control" name="email" required>
-              </div>
-              <div class="form-group">
-                <label for="message"><i class="fas fa-comment me-2"></i>  Your Message</label>
-                <textarea id="message" class="form-control" name="message" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i>  Send Message</button>
-            </form>
-            <div class="contact-info" style="margin-top: 2rem;">
-              <div class="bio-item">
-                <span class="bio-icon"><i class="fas fa-phone"></i></span>
-                <span>+27 72 486 4111</span>
-              </div>
-              <div class="bio-item">
-                <span class="bio-icon"><i class="fas fa-envelope"></i></span>
-                <span>duncan.ram@gmail.com</span>
-              </div>
-            </div>
-          </div>
-          <div class="map-container">
-            <iframe src="https://maps.google.com/maps?width=100%25&height=400&hl=en&q=Serengeti%20Sands,%20Eldoret%20Street,%20Sunninghill+(Serengeti%20Sands)&t=&z=14&ie=UTF8&iwloc=B&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <h3>Todani Duncan Ramuntshi</h3>
-        <div class="footer-nav">
-          <ul class="nav">
-            <li class="nav-item"><a href="https://twitter.com/duncanram" title="Twitter"><i class="fab fa-twitter fa-lg"></i></a></li>
-            <li class="nav-item"><a href="https://www.facebook.com/duncanram" title="Facebook"><i class="fab fa-facebook fa-lg"></i></a></li>
-            <li class="nav-item"><a href="https://www.instagram.com/duncan.ram" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a></li>
-            <li class="nav-item"><a href="https://github.com/duncanram" title="GitHub"><i class="fab fa-github fa-lg"></i></a></li>
-            <li class="nav-item"><a href="https://www.linkedin.com/in/duncanram" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a></li>
-          </ul>
-        </div>
-        <p><i class="far fa-copyright"></i> 2025 All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+            if (window.scrollY > headerHeight) {
+                siteTitle.classList.add('title-hidden');
+            } else {
+                siteTitle.classList.remove('title-hidden');
+            }
+        });
+    </script>
 </body>
 
 </html>
